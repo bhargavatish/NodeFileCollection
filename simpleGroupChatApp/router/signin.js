@@ -23,7 +23,7 @@ user.get("/", (req, res, next) => {
 user.post("/", (req, res, next) => {
     console.log(req.body.username)
     console.log(req.body.message)
-    fs.writeFile('chatFile.txt', `${req.body.username}:${req.body.message}:`, { flag: "a" }, (err) => {
+    fs.writeFile('chatFile.txt', `${req.body.username}:${req.body.message}:`, { flag: "a" }, (err) => {    // flagged out to change file into append mode
         err ? console.log(err) : res.send('<body> <h1> Message sent ! </h1></body>')
     })
 })
